@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.shiro.mapper.UserMapper">
+
+  <resultMap id="userMapper" type="ssm.shiro.entity.User">
+      <id column="id" property="id" />
+      <result column="username" property="username" />
+      <result column="age" property="age" />
+      <result column="password" property="password" />
+  </resultMap>
+
+    <insert id="addUser" parameterType="ssm.shiro.entity.User">
+        insert user(id,username,age,password) values(#{id},#{username},#{age},#{password})
+    </insert>
+
+    <select id="getUserById" resultMap="userMapper">
+        select * from user where 1=1 and id = #{id}
+    </select>
+
+    <delete id="deleteUserById">
+        delete from user where 1=1 and id = #{id}
+    </delete>
+
+    <select id="findPasswordByUsername" resultType="String">
+        select password from user where 1=1 and username = #{username}
+    </select>
+
+</mapper>
