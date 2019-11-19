@@ -5,24 +5,16 @@
   <resultMap id="userMapper" type="ssm.shiro.entity.User">
       <id column="id" property="id" />
       <result column="username" property="username" />
-      <result column="age" property="age" />
       <result column="password" property="password" />
+      <result column="display_name" property="displayName" />
+      <result column="status" property="status" jdbcType="TINYINT"/>
+      <result column="is_admin" property="isAdmin" jdbcType="TINYINT"/>
+      <result column="memo" property="memo" />
   </resultMap>
 
-    <insert id="addUser" parameterType="ssm.shiro.entity.User">
-        insert user(id,username,age,password) values(#{id},#{username},#{age},#{password})
-    </insert>
-
-    <select id="getUserById" resultMap="userMapper">
-        select * from user where 1=1 and id = #{id}
-    </select>
-
-    <delete id="deleteUserById">
-        delete from user where 1=1 and id = #{id}
-    </delete>
 
     <select id="findPasswordByUsername" resultType="String">
-        select password from user where 1=1 and username = #{username}
+        select password from tb_user where 1=1 and username = #{username}
     </select>
 
 </mapper>

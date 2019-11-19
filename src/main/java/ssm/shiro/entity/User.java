@@ -2,48 +2,24 @@ package ssm.shiro.entity;/**
  * Created by taohu on 2019/10/16.
  */
 
+import lombok.Data;
+import lombok.ToString;
+
 /**
  * @author taohu@maxxipoint.com
  * @prpgram ssm-shiro
  * @description 用户
  * @create 2019/10/16 09:49:24
  */
+@Data
+@ToString
 public class User {
 
     private String id;
     private String username;
-    private Integer age;
     private String password;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private String displayName;
+    private Boolean status;
+    private Boolean isAdmin;
+    private String memo;
 }

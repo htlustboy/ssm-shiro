@@ -28,13 +28,13 @@ public class MyShiroConfig {
         shiroFilterFactoryBean.setLoginUrl("/login/index");
         shiroFilterFactoryBean.setUnauthorizedUrl("/login/notRole");
         Map<String, String> map = new LinkedHashMap<>();
-        map.put("/login/login","anon");
-        map.put("/test/**", "anon");
-
-        map.put("/login/**", "authc");
-        map.put("/user/**","authc");
-        //必须放最后
-        map.put("/**", "authc");
+//        map.put("/login/login","anon");
+//        map.put("/test/**", "anon");
+//
+//        map.put("/login/**", "authc");
+//        map.put("/user/**","authc");
+//        //必须放最后
+//        map.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         return shiroFilterFactoryBean;
     }

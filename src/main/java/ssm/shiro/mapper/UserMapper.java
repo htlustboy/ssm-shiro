@@ -10,11 +10,5 @@ import ssm.shiro.entity.User;
 @Repository
 public interface UserMapper {
 
-    Integer addUser(User user);
-
-    User getUserById(@Param("id") String id);
-
-    Integer deleteUserById(String id);
-
     String findPasswordByUsername(String username);
 }

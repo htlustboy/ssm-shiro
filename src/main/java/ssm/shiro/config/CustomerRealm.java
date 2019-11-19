@@ -2,6 +2,7 @@ package ssm.shiro.config;/**
  * Created by taohu on 2019/10/16.
  */
 
+import lombok.extern.log4j.Log4j2;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -25,9 +26,8 @@ import java.util.Set;
  * @description shiro realm
  * @create 2019/10/16 15:27:50
  */
+@Log4j2
 public class CustomerRealm extends AuthorizingRealm {
-
-    private static Logger logger = LoggerFactory.getLogger(CustomerRealm.class);
 
     @Resource
     UserService userService;
@@ -57,7 +57,7 @@ public class CustomerRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        logger.info("登陆验证开始~~~:{ s% }", new Date());
+        log.info("登陆验证开始~~~:{ s% }", new Date());
         String username = (String) authenticationToken.getPrincipal();
         String password = new String((char[]) authenticationToken.getCredentials());
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
