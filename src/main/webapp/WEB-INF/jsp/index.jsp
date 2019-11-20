@@ -10,7 +10,7 @@
     <body style=" background: url('/resource/image/index/bg.jpg') no-repeat center center fixed; background-size: 100%;">
 
     <div class="modal-dialog" style="margin-top: 10%;">
-        <form action="/login/login" id="loginForm" name="loginForm">
+        <form action="/login/login" method="post" id="loginForm" name="loginForm">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title text-center" id="myModalLabel">Welcome</h4>
@@ -29,9 +29,6 @@
                 <div class="modal-footer">
                     <div class="form-group">
                         <button type="button" onclick="doSubmit()" class="btn btn-primary form-control">登录</button>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" onclick="doRegiter()" class="btn btn-default form-control">注册</button>
                     </div>
                 </div>
             </div><!-- /.modal-content -->

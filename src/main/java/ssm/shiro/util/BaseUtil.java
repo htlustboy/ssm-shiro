@@ -5,6 +5,7 @@ package ssm.shiro.util;/**
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -45,7 +46,18 @@ public class BaseUtil {
         return UUID.randomUUID().toString();
     }
 
+    /**
+     * 列表截取
+     * @return
+     */
+    public static List<?> subList(int start,Integer end ,List<?> list){
+        if(end>list.size()){
+            return list.subList(start,list.size());
+        }
+        return list.subList(start,end);
+    }
+
     public static void main(String[] args) {
-        System.out.println(md5("123456","lustboy"));
+        System.out.println(md5("123456","aaaaa"));
     }
 }

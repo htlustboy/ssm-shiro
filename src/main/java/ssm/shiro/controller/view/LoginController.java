@@ -6,9 +6,11 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 import ssm.shiro.controller.BaseController;
@@ -22,7 +24,7 @@ import ssm.shiro.controller.BaseController;
 @Log4j2
 @Controller
 @RequestMapping("/login")
-public class LoginController{
+public class LoginController extends BaseController{
 
     /**
      * 首页
@@ -37,12 +39,12 @@ public class LoginController{
     /**
      * 登陆操作
      *
-     * @param username
-     * @param password
      * @return
      */
-    @RequestMapping("/login")
-    public Object login(@RequestParam("username") String username, @RequestParam("password") String password, RedirectAttributesModelMap model) {
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public Object login(RedirectAttributesModelMap model) {
+        String username = this.getRequest().getParameter("username");
+        String password = this.getRequest().getParameter("password");
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         try {
@@ -59,7 +61,8 @@ public class LoginController{
             model.addFlashAttribute("errorMessage","用户名或密码不正确！");
         }
         if (subject.isAuthenticated()) {
-            model.addFlashAttribute("errorMessage","登陆成功");
+            this.getRequest().getSession().setAttribute("user",subject);
+            return "list";
         } else {
             token.clear();
             if(model.getFlashAttributes().get("errorMessage")==null){
@@ -82,7 +85,6 @@ public class LoginController{
         if (subject != null) {
             subject.logout();
         }
-        model.addFlashAttribute("errorMessage","注销成功");
         return "index";
     }
 

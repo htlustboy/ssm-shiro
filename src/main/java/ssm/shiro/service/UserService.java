@@ -8,8 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ssm.shiro.entity.User;
 import ssm.shiro.mapper.UserMapper;
+import ssm.shiro.pager.Pager;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author taohu@maxxipoint.com
@@ -31,5 +33,14 @@ public class UserService {
      */
     public String findPasswordByUserName(String username) {
         return userMapper.findPasswordByUsername(username);
+    }
+
+    /**
+     * 查询用户列表
+     * @param pager
+     * @return
+     */
+    public List<User> getUserList(Pager pager){
+        return userMapper.getUserList(pager);
     }
 }
