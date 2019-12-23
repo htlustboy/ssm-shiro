@@ -11,7 +11,7 @@ import org.springframework.boot.SpringApplication;
 import javax.swing.*;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description 启动类
  * @create 2019/10/16 09:39:01

@@ -15,7 +15,7 @@ import ssm.shiro.service.UserService;
 import javax.annotation.Resource;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description 登陆入口
  * @create 2019/10/16 16:18:49

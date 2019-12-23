@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description
  * @create 2019/11/20 10:50:35
@@ -53,5 +53,10 @@ public class UserController extends BaseController {
         model.addAttribute("pager",pager);
         model.addAttribute("userList", BaseUtil.subList(start,end,userList));
         return "user";
+    }
+
+    @RequestMapping("/add")
+    public String add(){
+        return "user-add";
     }
 }

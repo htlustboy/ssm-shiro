@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description 日志测试
  * @create 2019/10/17 09:44:01

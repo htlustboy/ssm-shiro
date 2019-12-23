@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.ToString;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description 用户
  * @create 2019/10/16 09:49:24

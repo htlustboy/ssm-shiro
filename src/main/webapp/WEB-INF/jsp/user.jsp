@@ -5,14 +5,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>欢迎</title>
 
 </head>
 <body>
 
-<div id="wrapper" class="toggled">
+<div id="wrapper">
     <div class="overlay"></div>
     <!-- Sidebar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
@@ -59,8 +57,8 @@
             <form class="form-search" style="margin: 20px;margin-bottom: 40px;" id="searchForm" action="/user/list" method="post">
                 <input class="input-medium search-query" placeholder="用户昵称" name="displayName" id="displayName" value="${pager.searchInfo.displayName}" type="text" />
                 <button type="submit" class="btn-sm">查找</button>
-                <button type="button" onclick="add()" class="btn-sm">重置</button>
-                <button type="button" onclick="add();" style="float: right" class="btn-sm">新增用户</button>
+                <button type="button" onclick="doClear()" class="btn-sm">重置</button>
+                <button type="button" onclick="add()" style="float: right" class="btn-sm">新增用户</button>
                 <input type="hidden" name="pageNo" id="pageNo" value="${pager.pageNo}">
 
             <table class="table">

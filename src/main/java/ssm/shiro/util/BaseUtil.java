@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description 通用工具类
  * @create 2019/10/16 16:33:19

@@ -21,7 +21,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description shiro realm
  * @create 2019/10/16 15:27:50

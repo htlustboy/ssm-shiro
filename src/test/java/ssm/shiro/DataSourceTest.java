@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description 测试用例
  * @create 2019/10/16 10:21:54

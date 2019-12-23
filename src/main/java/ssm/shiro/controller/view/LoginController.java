@@ -15,11 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 import ssm.shiro.controller.BaseController;
 
+import javax.servlet.http.HttpSession;
+
 /**
- * @author taohu@maxxipoint.com
+ * @author lustboy
  * @prpgram ssm-shiro
  * @description
- * @create 2019/10/17 10:20:00
+ * @create 2019/10/17 10:20:00`
  */
 @Log4j2
 @Controller
@@ -42,7 +44,7 @@ public class LoginController extends BaseController{
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Object login(RedirectAttributesModelMap model) {
+    public Object login(RedirectAttributesModelMap model, HttpSession session) {
         String username = this.getRequest().getParameter("username");
         String password = this.getRequest().getParameter("password");
         Subject subject = SecurityUtils.getSubject();
@@ -61,7 +63,7 @@ public class LoginController extends BaseController{
             model.addFlashAttribute("errorMessage","用户名或密码不正确！");
         }
         if (subject.isAuthenticated()) {
-            this.getRequest().getSession().setAttribute("user",subject);
+            session.setAttribute("user",subject);
             return "list";
         } else {
             token.clear();
